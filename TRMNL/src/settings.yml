@@ -24,7 +24,7 @@ custom_fields:
   name: Resort
   field_type: string
   description: The JSON link of your ski resort on snow.miron.asia.
-  help_text: Open <a href="https://snow.miron.asia" target="_blank">https://snow.miron.asia</a>, search for your resort, right-click its <strong>JSON</strong> link and choose <strong>Copy link address</strong>. It looks like <code>https://snow.miron.asia/json/at/soelden.json</code>.
+  help_text: Open <a href="https://snow.miron.asia" target="_blank">https://snow.miron.asia</a>, search for your resort, open it and copy JSON path from data box on the right It looks like <code>https://snow.miron.asia/json/at/soelden.json</code>.
   placeholder: https://snow.miron.asia/json/at/soelden.json
 name: Ski Resort Snow Report
 description: Opened slopes/lifts in ski resorts
