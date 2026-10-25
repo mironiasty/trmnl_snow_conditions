@@ -20,12 +20,12 @@ custom_fields:
   field_type: author_bio
   description: Show snow report for your favourite ski resort. This plugin uses data from https://snow.miron.asia. Visit that website, find your desired ski resort, copy link to JSON file and put int pulling url in plugin config
   github_url: https://github.com/mironiasty/trmnl_snow_conditions
-- keyname: resort
-  name: Ski resort
-  field_type: xhrSelect
-  endpoint: https://snow.miron.asia/trmnl/resorts.json
-  http_verb: GET
-  exclude_csrf_token: true
+- keyname: resort_url
+  name: Resort
+  field_type: string
+  description: The JSON link of your ski resort on snow.miron.asia.
+  help_text: Open <a href="https://snow.miron.asia" target="_blank">snow.miron.asia</a>, search for your resort, right-click its <strong>JSON</strong> link and choose <strong>Copy link address</strong>. It looks like <code>https://snow.miron.asia/json/at/soelden.json</code>.
+  placeholder: https://snow.miron.asia/json/at/soelden.json
 name: Ski Resort Snow Report
 description: Opened slopes/lifts in ski resorts
 refresh_interval: 360
