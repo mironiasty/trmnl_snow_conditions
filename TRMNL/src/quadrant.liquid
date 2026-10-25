@@ -1,18 +1,18 @@
   <div class="layout layout--col gap--none">
     <div class="flex flex--col gap--medium w--full flex--center">
       <div class="grid grid--cols-2">
-        {% render "show_item", id: "snow_mountain", value: {{snow_mountain}}, unit: "cm" %}
-        {% render "show_item", id: "snow_valley", value: {{snow_valley}}, unit: "cm" %}
+        {% render "show_item", id: "snow_mountain", value: {{snow.mountain_cm}}, unit: "cm" %}
+        {% render "show_item", id: "snow_valley", value: {{snow.valley_cm}}, unit: "cm" %}
       </div>
       <div class="divider"></div>
       <div class="grid grid--cols-2">
-        {% render "last_snowfall_item", snowfall: {{last_snowfall}} %}
-        {% render "show_item", id: "new_snow", value: {{new_snow}}, unit: "cm" %}
+        {% render "last_snowfall_item", snowfall: {{snow.last_snowfall}} %}
+        {% render "show_item", id: "new_snow", value: {{snow.fresh_cm}}, unit: "cm" %}
       </div>
     </div>
   </div>
 <div class="title_bar">
-  <span class="instance">{{ resort_name }}</span>
+  <span class="instance">{{ name }}</span>
 </div>
 
 {% render "translations", locale: trmnl.user.locale %}
