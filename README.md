@@ -1,24 +1,24 @@
-# ❄️ TRMNL Bergfex Snow Report
+# ❄️ TRMNL Ski Resort Snow Report
 
-Show your favouring ski resorts status on your [TRMNL](https://usetrmnl.com/)
+Show your favourite ski resort's status on your [TRMNL](https://usetrmnl.com/)
 
 <img src=docs/trmnl_obertauern.png  />
 
 ## Installation
 
-**This plugin requires Home Assistant to work.**
+Data comes from [snow.miron.asia](https://snow.miron.asia).
 
-- Install [Bergfex Snow Report Integration](https://github.com/timmaurice/bergfex).
-- Get Webhook URL from plugin page on your TRMNL website.
-- Add new resort using Home Assistant integration. On last step, you can also put Webhook URL from TRML
+- Add the **Ski Resort Snow Report** plugin on your TRMNL website.
+- Open [snow.miron.asia](https://snow.miron.asia) and search for your resort.
+- Right-click its **JSON** link and choose **Copy link address**. It looks like `https://snow.miron.asia/json/at/soelden.json`.
+- Paste that link into the **Resort** field in the plugin settings.
 
+## Development
+
+Layouts in `TRMNL/src` are synced directly with TRMNL, so changes made on the TRMNL website show up here as commits.
 
 ## FAQ
 
-### Why Home Assistant?
-
-AFAIK Bergfex does not expose any public API, so we can ony scrape data manually.
-
 ### Data field is missing for my resort
 
-Please check if Bergfex website provide this data for given resort. Various resorts have different data available. It is on my TODO list to make data fetching more flexible.
+Please check if [snow.miron.asia](https://snow.miron.asia) provides this data for the given resort. Various resorts have different data available.
