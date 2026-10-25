@@ -39,6 +39,10 @@
   {% render "show_item_small", id: "snow_type",id_value: "snow_type_value", value: {{condition}} %}
 {% endtemplate %}
 
+{% template last_update %}
+  <span class="title">{{updated_at | date: "%s" | plus: trmnl.user.utc_offset | date: "%d-%m-%Y %H:%M" }}</span>
+{% endtemplate %}
+
 {% template translations %}
 <script type="text/javascript">
   const translations = {

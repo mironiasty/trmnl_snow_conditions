@@ -1,31 +1,31 @@
 <div class="layout layout--col gap--none">
-  <span class="title">{{resort_name}}</span>
+  <span class="title">{{name}}</span>
   <div class="divider my--10"></div>
   <div class="grid grid--cols-5">
     <div class="flex flex--col  col--span-2">
       <div class="w--full px--2">
-        {% render "show_progress", value: {{slopes_open_km}}, total: {{slopes_total_km}} , unit: "km" %}
+      {% render "show_progress", value: {{slopes.open_km}}, total: {{slopes.total_km}} , unit: "km" %}
         <div class="divider my--3"></div>
-        {% render "show_progress", id: "slopes_open_count", value: {{slopes_open_count}}, total: {{slopes_total_count}} %}
+        {% render "show_progress", id: "slopes_open_count", value: {{slopes.open}}, total: {{slopes.total}} %}
         <div class="divider my--3"></div>
-        {% render "show_progress", id: "lifts_open_count", value: {{lifts_open_count}}, total: {{lifts_total_count}} %}
+        {% render "show_progress", id: "lifts_open_count", value: {{lifts.open}}, total: {{lifts.total}} %}
       </div>
     </div>
     <div class="col--span-3 pl--10">
       <div class="flex flex--col gap--medium w--full flex--center">
         <div class="grid grid--cols-2">
-          {% render "show_item", id: "snow_mountain", value: {{snow_mountain}}, unit: "cm" %}
-          {% render "show_item", id: "snow_valley", value: {{snow_valley}}, unit: "cm" %}
+          {% render "show_item", id: "snow_mountain", value: {{snow.mountain_cm}}, unit: "cm" %}
+          {% render "show_item", id: "snow_valley", value: {{snow.valley_cm}}, unit: "cm" %}
         </div>
         <div class="divider"></div>
         <div class="grid grid--cols-2">
-          {% render "last_snowfall_item", snowfall: {{last_snowfall}} %}
-          {% render "show_item", id: "new_snow", value: {{new_snow}}, unit: "cm" %}
+          {% render "last_snowfall_item", snowfall: {{snow.last_snowfall}} %}
+          {% render "show_item", id: "new_snow", value: {{snow.fresh_cm}}, unit: "cm" %}
         </div>
         <div class="divider"></div>
         <div class="grid grid--cols-2">
-          {% render "snow_condition_item", condition: {{snow_condition}} %}
-          {% render "show_item_small", id: "avalanche_info", value: {{avalanche_warning}} %}
+          {% render "snow_condition_item", condition: {{snow.condition}} %}
+          {% render "show_item_small", id: "avalanche_info", value: {{avalanche}} %}
         </div>
       </div>
     </div>
@@ -33,8 +33,8 @@
 
 </div>
 <div class="title_bar">
-  <span class="title">Bergfex</span>
-  <span class="instance">{{ resort_name }}</span>
+  {% render "last_update" updated_at: {{lifts_updated_at}} %}
+  <span class="instance">{{name}}</span>
 </div>
 
 {% render "translations", locale: trmnl.user.locale %}
