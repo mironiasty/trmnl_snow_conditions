@@ -1,4 +1,4 @@
-# ❄️ TRMNL Ski Resort Snow Report
+# <img src="docs/logo.svg" width="40" alt="" /> TRMNL Ski Resort Snow Report
 
 Show your favourite ski resort's status on your [TRMNL](https://usetrmnl.com/)
 

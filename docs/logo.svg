@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" fill="none">
+  <!-- Mountains with snow caps cut out -->
+  <path fill="#F8654B" fill-rule="evenodd" d="M40,440 L230,130 L330,290 L380,220 L472,440 Z M230,152 L267.5,212 L248,232 L230,214 L212,232 L193.2,212 Z M380,236 L395,272 L388,280 L380,272 L366,282 L354.3,272 Z"/>
+  <!-- Gondola cable and hanger -->
+  <path fill="#F8654B" d="M25.15,35.13 L489.15,145.13 L486.85,154.87 L22.85,44.87 Z M375,122 H385 V152 H375 Z"/>
+  <!-- Gondola with windows cut out -->
+  <path fill="#F8654B" fill-rule="evenodd" d="M358,148 H402 A10,10 0 0 1 412,158 V190 A10,10 0 0 1 402,200 H358 A10,10 0 0 1 348,190 V158 A10,10 0 0 1 358,148 Z M358,158 H376 V176 H358 Z M384,158 H402 V176 H384 Z"/>
+</svg>
