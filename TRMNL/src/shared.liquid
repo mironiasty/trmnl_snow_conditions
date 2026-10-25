@@ -83,7 +83,7 @@
       unknown: "unknown"
     }
   }
-  const locale = "{{locale}}"
+  const locale = "en"//"{{locale}}"
   const translation = translations[locale] ?? translations['en']
   for (const [key, value] of Object.entries(translation)) {
     if(document.getElementById(key)) document.getElementById(key).textContent=value
