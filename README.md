@@ -2,7 +2,7 @@
 
 Show your favourite ski resort's status on your [TRMNL](https://usetrmnl.com/)
 
-<img src=docs/trmnl_obertauern.png  />
+<img src="docs/trmnl_soelden.png" />
 
 ## Installation
 
