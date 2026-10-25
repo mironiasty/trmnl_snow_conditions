@@ -1,0 +1,25 @@
+---
+strategy: webhook
+no_screen_padding: 'no'
+dark_mode: 'no'
+static_data: '{"snow_conditions": {"resort_name": "Les Saisies", "region_path": "/les-saisies/", "snow_mountain": "60", "elevation_mountain": 2069, "snow_valley": "36", "elevation_valley": 1150, "last_update": "20.12.2025", "snow_condition": "keine Meldung", "last_snowfall": "18.12.2025", "avalanche_warning": "II - mäßig", "lifts_open_count": 29, "lifts_total_count": 30, "slopes_open_km": 55, "slopes_total_km": 77, "slopes_open_count": 51, "slopes_total_count": 60, "slope_condition": "keine Meldung", "status": "Open"}}'
+polling_verb: get
+framework_version: 2.3.7
+serverless_language: node
+refresh_interval_floor: '360'
+polling_url: ''
+polling_headers: ''
+polling_body: ''
+id: 219253
+oauth_enabled: 'false'
+oauth_pkce_enabled: 'no'
+custom_fields:
+- keyname: doesnt_matter
+  name: Bergfex Snow Report
+  category: travel,custom
+  field_type: author_bio
+  description: Show snow report for your favourite ski resort. This plugin requires Home Assistant with Bergfex Snow Report Integration to get Snow reports. When adding ski resort in integration, you can also add webhook URL from pluign page. See GitHub page for more information.
+  github_url: https://github.com/mironiasty/trmnl_bergfex_snow
+name: Bergfex Snow Report
+description: ''
+refresh_interval: 360
