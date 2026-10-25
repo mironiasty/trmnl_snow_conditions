@@ -21,5 +21,5 @@ custom_fields:
   description: Show snow report for your favourite ski resort. This plugin uses data from https://snow.miron.asia. Visit that website, find your desired ski resort, copy link to JSON file and put int pulling url in plugin config
   github_url: https://github.com/mironiasty/trmnl_snow_conditions
 name: Ski Resort Snow Report
-description: ''
+description: Opened slopes/lifts in ski resorts
 refresh_interval: 360
