@@ -25,7 +25,7 @@ custom_fields:
   field_type: string
   description: The JSON link of your ski resort on liftradar.eu.
   help_text: Open <a href="https://liftradar.eu" target="_blank">https://liftradar.eu</a>, search for your resort, open it and copy JSON path from data box on the right It looks like <code>https://liftradar.eu/json/at/soelden.json</code>.
-  placeholder: https://liftradar.eu/json/at/soelden.json
+  placeholder: https://liftradar.eu/json/at/hintertux.json
 name: Ski Resort Snow Report
 description: Opened slopes/lifts in ski resorts
 refresh_interval: 360
