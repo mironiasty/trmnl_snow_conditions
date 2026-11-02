@@ -6,7 +6,7 @@ static_data: '{"snow_conditions": {"resort_name": "Les Saisies", "region_path": 
 polling_verb: get
 framework_version: 3.4.4
 serverless_language: node
-refresh_interval_floor: '360'
+refresh_interval_floor: '120'
 polling_url: "{{ resort_url }}"
 polling_headers: ''
 polling_body: ''
@@ -18,7 +18,7 @@ custom_fields:
   name: LiftRadar - Ski resorts snow report
   category: travel,custom
   field_type: author_bio
-  description: Show opened lifts, slopes and snow report for your favourite ski resort. This plugin uses data from https://liftradar.eu. Visit that website, find your desired ski resort, copy link to JSON file and put into pulling url in plugin config
+  description: Show opened lifts, slopes and snow report for your favourite ski resort in Europe. This plugin uses data from https://liftradar.eu. Visit that website, find your desired ski resort, copy link to JSON file and put into pulling url in plugin config
   github_url: https://github.com/mironiasty/trmnl_snow_conditions
 - keyname: resort_url
   name: Resort
@@ -26,6 +26,6 @@ custom_fields:
   description: The JSON link of your ski resort on liftradar.eu.
   help_text: Open <a href="https://liftradar.eu" target="_blank">https://liftradar.eu</a>, search for your resort, open it and copy JSON path from data box on the right It looks like <code>https://liftradar.eu/json/at/soelden.json</code>.
   placeholder: https://liftradar.eu/json/at/hintertux.json
-name: Ski Resort Snow Report
+name: Ski Resort Snow Report (Europe)
 description: Opened slopes/lifts in ski resorts
 refresh_interval: 360
