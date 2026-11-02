@@ -1,5 +1,7 @@
 <div class="layout layout--col gap--none">
   <div class="w--full px--3 mb--5">
+    {% render "show_progress", icon: "mountain", value: {{slopes.open_km}}, total: {{slopes.total_km}} , unit: "km" %}
+        <div class="divider my--3"></div>
     {% render "show_progress", icon: "slope", id: "slopes_open_count", value: {{slopes.open}}, total: {{slopes.total}} %}
     <div class="divider my--3"></div>
     {% render "show_progress", icon: "lift", id: "lifts_open_count", value: {{lifts.open}}, total: {{lifts.total}} %}
@@ -10,10 +12,7 @@
       {% render "show_item", id: "snow_valley", value: {{snow.valley_cm}}, unit: "cm" %}
     </div>
     <div class="divider"></div>
-    <div class="grid grid--cols-2">
-      {% render "last_snowfall_item", snowfall: {{snow.last_snowfall}} %}
-      {% render "show_item", id: "new_snow", value: {{snow.fresh_cm}}, unit: "cm"%}
-    </div>
+
     <div class="divider"></div>
     <div class="grid grid--cols-2">
       {% render "snow_condition_item", condition: {{snow.condition}} %}
