@@ -1,3 +1,24 @@
+{% template icon %}
+<svg width="{{ size | default: 26 }}" height="{{ size | default: 26 }}" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0">
+{% case name %}
+{% when "mountain" %}
+  <path d="M2 21 L9 7 L13.5 14 L16 10.5 L22 21 Z"/>
+  <path d="M6.8 11.4 L9 12.5 L11.2 11.4"/>
+{% when "slope" %}
+  <circle cx="16" cy="4" r="2" fill="black"/>
+  <path d="M14 8 L10 11 L13.5 14 L11 18"/>
+  <path d="M14 8 L18 11.5"/>
+  <path d="M3 16 L21 22"/>
+{% when "lift" %}
+  <path d="M2 6 L22 2"/>
+  <path d="M12 4 L12 9"/>
+  <rect x="6" y="9" width="12" height="12" rx="2"/>
+  <path d="M6 14 L18 14"/>
+  <path d="M12 14 L12 9"/>
+{% endcase %}
+</svg>
+{% endtemplate %}
+
 {% template show_item %}
 <div class="item">
   <div class="meta"></div>
@@ -21,7 +42,10 @@
 {% template show_progress %}
 <div class="progress-bar progress-bar--small progress-bar--emphasis-2">
   <div class="content">
-    <span class="label label" id="{{id}}">{{ label }}</span>
+    <span style="display:flex;align-items:center;gap:6px">
+      {% if icon %}{% render "icon", name: icon %}{% endif %}
+      <span class="label label" id="{{id}}">{{ label }}</span>
+    </span>
     <span class="value value">{{value}}{{unit}}/{{total}}{{unit}}</span>
   </div>
   <div class="track">
