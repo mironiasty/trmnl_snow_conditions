@@ -80,7 +80,8 @@
       last_snowfall: "Ostatni opad",
       avalanche_info: "Zagrożenie lawinowe",
       avalanche_info_small: "Lawinowe",
-      unknown: "nieznane"
+      unknown: "nieznane",
+      none: "brak"
     },
     en: {
       slopes_open_count: "Open pistes",
@@ -92,7 +93,8 @@
       last_snowfall: "Latest snowfall",
       avalanche_info: "Avalanche alert",
       avalanche_info_small: "Avalanche",
-      unknown: "unknown"
+      unknown: "unknown",
+      none: "none"
     },
     de: {
       slopes_open_count: "Offene Pisten",
@@ -104,7 +106,8 @@
       last_snowfall: "Letzter Schneefall",
       avalanche_info: "Lawinenwarnstufe",
       avalanche_info_small: "Lawinenwarnstufe",
-      unknown: "unknown"
+      unknown: "unknown",
+      none: "keine"
     }
   }
   const locale = "{{locale}}"
@@ -114,5 +117,9 @@
   }
   if(document.getElementById("snow_type_value")?.textContent == 'unknown'){
     document.getElementById("snow_type_value").textContent =translation.unknown
+  }
+  const avalancheValue = document.getElementById("avalanche_value")
+  if(avalancheValue && ['', 'null'].includes(avalancheValue.textContent.trim())){
+    avalancheValue.textContent = translation.none
   }
 </script>{% endtemplate %}
