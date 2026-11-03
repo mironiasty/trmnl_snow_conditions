@@ -9,6 +9,22 @@
   <path d="M8.5 17.5 L12 14.5 L15.5 17.5" fill="white"/>
   <path d="M9.5 16.8 L9.5 21 L14.5 21 L14.5 16.8" fill="white"/>
   <path d="M1 21 L23 21"/>
+{% when "snowflake" %}
+  <g><path d="M12 2 V22 M9.5 4.5 L12 7 L14.5 4.5 M9.5 19.5 L12 17 L14.5 19.5"/></g>
+  <g transform="rotate(60 12 12)"><path d="M12 2 V22 M9.5 4.5 L12 7 L14.5 4.5 M9.5 19.5 L12 17 L14.5 19.5"/></g>
+  <g transform="rotate(120 12 12)"><path d="M12 2 V22 M9.5 4.5 L12 7 L14.5 4.5 M9.5 19.5 L12 17 L14.5 19.5"/></g>
+{% when "calendar" %}
+  <rect x="3" y="5" width="18" height="16" rx="2"/>
+  <path d="M3 10 H21 M8 3 V7 M16 3 V7"/>
+  <path d="M12 12.5 V18.5 M9.4 14 L14.6 17 M9.4 17 L14.6 14" stroke-width="1.6"/>
+{% when "condition" %}
+  <circle cx="10" cy="10" r="7"/>
+  <path d="M15 15 L21 21"/>
+  <path d="M10 6.5 V13.5 M7 8.2 L13 11.8 M7 11.8 L13 8.2" stroke-width="1.6"/>
+{% when "warning" %}
+  <path d="M12 3 L22 20 H2 Z"/>
+  <path d="M12 9 V14"/>
+  <circle cx="12" cy="17" r="0.6" fill="black"/>
 {% when "slope" %}
   <circle cx="16" cy="4" r="2" fill="black"/>
   <path d="M14 8 L10 11 L13.5 14 L11 18"/>
@@ -28,6 +44,7 @@
 {% case id %}
 {% when "snow_mountain" %}{% assign item_icon = "mountain" %}
 {% when "snow_valley" %}{% assign item_icon = "valley" %}
+{% when "new_snow" %}{% assign item_icon = "snowflake" %}
 {% else %}{% assign item_icon = nil %}
 {% endcase %}
 <div class="item">
@@ -47,10 +64,19 @@
 {% endtemplate %}
 
 {% template show_item_small %}
+{% case id %}
+{% when "last_snowfall" %}{% assign small_icon = "calendar" %}
+{% when "snow_type" %}{% assign small_icon = "condition" %}
+{% when "avalanche_info", "avalanche_info_small" %}{% assign small_icon = "warning" %}
+{% else %}{% assign small_icon = nil %}
+{% endcase %}
 <div class="item">
   <div class="meta"></div>
   <div class="content">
-    <span class="value value--tnums value--small" id="{{id_value}}">{{ value }}</span>
+    <span style="display:flex;align-items:center;gap:6px">
+      {% if small_icon %}{% render "icon", name: small_icon, size: 22 %}{% endif %}
+      <span class="value value--tnums value--small" id="{{id_value}}">{{ value }}</span>
+    </span>
     <span class="label" id="{{id}}">{{ label }}</span>
   </div>
 </div>
