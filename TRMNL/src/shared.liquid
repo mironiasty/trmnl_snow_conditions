@@ -23,7 +23,11 @@
 <div class="item">
   <div class="meta"></div>
   <div class="content">
+    {% if value == blank or value == "null" %}
+    <span class="value value--tnums value--small i18n-none">none</span>
+    {% else %}
     <span class="value value--tnums valu">{{ value }}{{ unit }}</span>
+    {% endif %}
     <span class="label" id="{{id}}">{{ label }}</span>
   </div>
 </div>
@@ -122,4 +126,5 @@
   if(avalancheValue && ['', 'null'].includes(avalancheValue.textContent.trim())){
     avalancheValue.textContent = translation.none
   }
+  document.querySelectorAll(".i18n-none").forEach(el => el.textContent = translation.none)
 </script>{% endtemplate %}
