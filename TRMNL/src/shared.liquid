@@ -4,6 +4,11 @@
 {% when "mountain" %}
   <path d="M2 21 L9 7 L13.5 14 L16 10.5 L22 21 Z"/>
   <path d="M6.8 11.4 L9 12.5 L11.2 11.4"/>
+{% when "valley" %}
+  <path d="M2 4 L8 15 Q12 20 16 15 L22 4"/>
+  <path d="M12 10 L9.5 15 L14.5 15 Z"/>
+  <path d="M12 15 L12 17"/>
+  <path d="M2 21 L22 21"/>
 {% when "slope" %}
   <circle cx="16" cy="4" r="2" fill="black"/>
   <path d="M14 8 L10 11 L13.5 14 L11 18"/>
@@ -20,14 +25,22 @@
 {% endtemplate %}
 
 {% template show_item %}
+{% case id %}
+{% when "snow_mountain" %}{% assign item_icon = "mountain" %}
+{% when "snow_valley" %}{% assign item_icon = "valley" %}
+{% else %}{% assign item_icon = nil %}
+{% endcase %}
 <div class="item">
   <div class="meta"></div>
   <div class="content">
-    {% if value == blank or value == "null" %}
-    <span class="value value--tnums value--small i18n-none">none</span>
-    {% else %}
-    <span class="value value--tnums valu">{{ value }}{{ unit }}</span>
-    {% endif %}
+    <span style="display:flex;align-items:center;gap:8px">
+      {% if item_icon %}{% render "icon", name: item_icon, size: 30 %}{% endif %}
+      {% if value == blank or value == "null" %}
+      <span class="value value--tnums value--small i18n-none">none</span>
+      {% else %}
+      <span class="value value--tnums valu">{{ value }}{{ unit }}</span>
+      {% endif %}
+    </span>
     <span class="label" id="{{id}}">{{ label }}</span>
   </div>
 </div>
