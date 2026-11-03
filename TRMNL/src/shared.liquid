@@ -99,7 +99,7 @@
 
 {% template last_snowfall_item %}
   {% assign last = "" %}
-  {% if snowfall != blank and snowfall != "null" %}{% assign last = snowfall | date: "%d/%m/%y" %}{% endif %}
+  {% if snowfall != blank and snowfall != "null" %}{% assign last = snowfall | date: "%d-%m-%y" %}{% endif %}
   {% render "show_item_small", id: "last_snowfall", value: {{last}} %}
 {% endtemplate %}
 
